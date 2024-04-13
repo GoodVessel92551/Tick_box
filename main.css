@@ -1,0 +1,48 @@
+:root{
+    --background:#181818;
+    --text:#F2F2F2;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+
+}
+
+
+input[type="checkbox"]{
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border: 1px solid var(--text);
+    background:none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked:after{
+    content: url(check.svg);
+    height: 16px;
+    width: 16px;
+    display: block;
+    position: absolute;
+    top:-2px;
+    left: 4px;
+    z-index: 10;
+    margin: 3px;
+    animation: check 0.3s ease;
+}
+
+@keyframes check {
+    from{
+        transform: scale(0.5) rotate(-5deg);
+        opacity: .5;
+    }
+    to{
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
